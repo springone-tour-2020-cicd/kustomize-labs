@@ -7,19 +7,19 @@ spec:
   template:
     spec:
       containers:
-      # - envFrom:
-      #   - configMapRef:
-      #       name: spring-configmap-env-bc54gmmtk4
-        image: markpollack/spring-sample-app:1.0.0 # REPLACE
-        imagePullPolicy: IfNotPresent
-        livenessProbe:
-          httpGet:
-            path: /actuator/info
-            port: 8080
-        name: app
-        ports:
-        - containerPort: 8080
-        readinessProbe:
-          httpGet:
-            path: /actuator/health
-            port: 8080
+        - name: app 
+          image: markpollack/spring-sample-app:1.0.0 # REPLACE
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /actuator/info
+              port: 8080
+          name: app
+          ports:
+          - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
