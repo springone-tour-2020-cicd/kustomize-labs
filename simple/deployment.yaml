@@ -7,9 +7,9 @@ spec:
   template:
     spec:
       containers:
-      - envFrom:
-        - configMapRef:
-            name: spring-configmap-env-bc54gmmtk4
+      # - envFrom:
+      #   - configMapRef:
+      #       name: spring-configmap-env-bc54gmmtk4
         image: markpollack/spring-sample-app:1.0.0 # REPLACE
         imagePullPolicy: IfNotPresent
         livenessProbe:
