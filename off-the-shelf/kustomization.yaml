@@ -1,0 +1,13 @@
+images:
+  - name: markpollack/spring-sample-app  # used for Kustomize matching
+    newName: markpollack/spring-sample-app
+    newTag: 1.0.0
+namePrefix: mark- # CHANGE
+commonLabels:
+  app.kubernetes.io/name: mark-spring-sample-app  # CHANGE
+configMapGenerator:
+  - name: spring-configmap-env  # naming convention for reference
+    envs:
+      - env.properties
+resources:
+  - github.com/kustomizations/spring-boot-web?ref=master
