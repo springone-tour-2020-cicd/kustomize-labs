@@ -1,12 +1,12 @@
 images:
   - name: markpollack/spring-sample-app  # used for Kustomize matching
-    newName: markpollack/spring-sample-app
+    newName: <YOUR-DOCKERHUB-USERNAME/spring-sample-app
     newTag: 1.0.0
 namePrefix: mark- # CHANGE
 commonLabels:
-  app.kubernetes.io/name: mark-spring-sample-app  # CHANGE
+  app.kubernetes.io/name: spring-sample-app
 configMapGenerator:
-  - name: spring-configmap-env  # naming convention for reference
+  - name: spring-configmap-env  # naming convention in off-the-shelf kustomization
     envs:
       - env.properties
 resources:
