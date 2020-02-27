@@ -15,11 +15,6 @@ spec:
           livenessProbe:
             httpGet:
               path: /actuator/info
-              port: 8080
-          name: app
-          ports:
-          - containerPort: 8080
           readinessProbe:
             httpGet:
               path: /actuator/health
-              port: 8080
